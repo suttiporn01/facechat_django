@@ -35,6 +35,9 @@
 .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
   top: -10px;
 }
+.pa-left {
+    padding-left: 1200px;
+  }
 
 @media (min-width: 576px) {
   .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
@@ -91,6 +94,9 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .pa-left {
+    padding-left: 650px;
+  }
 
   .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
     display: block;
@@ -125,6 +131,9 @@
 
   .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
+  }
+  .pa-left {
+    padding-left: 1017px;
   }
 }
 
@@ -161,13 +170,22 @@
         </a>
       </li>
     </ul>
-    <ul class="navbar-nav ">
+    <ul class="navbar-nav mr-auto ">
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fa fa-bell">
             <span class="badge badge-info">11</span>
           </i>
           Test
+        </a>
+      </li>
+    </ul>
+    <ul class="pa-left ">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'loginform' %}">
+          <i class=" glyphicon-log-out">
+          </i>
+          logout
         </a>
       </li>
     </ul>
