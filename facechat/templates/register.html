@@ -14,7 +14,17 @@
 </style>
 <!------ Include the above in your HEAD tag ---------->
 
-<form class="form-horizontal" action='' method="POST">
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+	<h1>{{ message }}</h1>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+<form class="form-horizontal" action="regi_input"  method="post">
+  {% csrf_token %}
   <fieldset>
     <div id="legend">
       <legend class="">Register</legend>
@@ -58,7 +68,7 @@
     <div class="control-group">
       <!-- Button -->
       <div class="controls">
-        <a class="btn btn-success">Register</a>
+        <input type="submit" class="btn btn-success">Register</input>
         
         <a class="btn btn-success" href='/login'>Backkkkk</a>
 

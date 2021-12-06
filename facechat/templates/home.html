@@ -1,0 +1,239 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>ข้อความต่างๆ</h1>
+<style>
+        body{
+    /* margin-top:2px;   */
+    background:#eee;
+}
+
+.thumb img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.post-user img {
+  border: 3px solid white;
+}
+
+.widget {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.widget-controls {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  padding: 14px;
+  font-size: 12px;
+}
+
+.widget-controls>a {
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: rgba(0,0,0,0.4);
+  -webkit-transition: color 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+
+.thumb {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 48px;
+}
+
+.thumb img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.post-user img {
+  border: 3px solid white;
+}
+
+.fs-mini {
+  font-size: 13px;
+}
+
+.bg-danger, .bg-info {
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -o-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.bg-danger {
+  background-color: #dd5826;
+}
+
+.bg-info {
+  background-color: #39bbdb;;
+}
+
+.text-white {
+  color: #fff;
+}
+
+ .widget-middle-overflow {
+  position: relative;
+  margin: 0 -20px;
+}
+
+.windget-padding-md {
+  padding: 15px 20px;
+}
+
+.mb-lg {
+  margin-bottom: 30px;
+}
+
+.mt-lg {
+  margin-top: 30px;
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.tags {
+  padding-left: 0;
+  list-style: none;
+}
+
+.tags>li>a {
+  padding: 2px 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid white;
+  color: inherit;
+  text-decoration: none;
+}
+
+.fs-mini {
+  font-size: 13px;
+}
+
+.text-light {
+  opacity: .8;
+}
+
+.mt-sm {
+  margin-top: 10px;
+}
+
+.bg-body-light {
+  background-color: #f6f6f6;
+}
+
+.widget > footer {
+  margin: 0 -20px -15px;
+  padding: 30px 20px;
+}
+
+.post-links {
+  margin-bottom: 0;
+  font-size: 12px;
+  padding-left: 0;
+}
+
+.post-links>li {
+  float: left;
+  list-style: none;
+  margin:8px;
+}
+
+.post-links>li>a {
+  text-decoration: none;
+  color: #999;
+}
+
+    </style>
+</head>
+<body>
+
+{% for post in program %}
+    {% if  post.id|divisibleby:2 == 0 %}
+        <div class="container bootstrap snippets bootdey">
+            <div class="row">
+            <!-- Post : ซ้ายยย -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <section class="widget">
+                        <div class="widget-controls">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                        <div class="widget-body">
+                            <div class="post-user mt-n-xs">
+                                <span class="thumb pull-left mr">
+                                    <img class="img-circle" src="https://bootdey.com/img/Content/user_2.jpg" alt="...">
+                                </span>
+                                <h5 class="mb-xs mt-xs">{{post.id}}{{post.username}}</h5>
+                                <p class="fs-mini text-muted"><time>25 mins</time> &nbsp; <i class="fa fa-map-marker"></i> &nbsp; near Amsterdam</p>
+                            </div>
+                            <div class="widget-middle-overflow windget-padding-md clearfix bg-danger text-white">
+                                <h3 class="mt-lg mb-lg">Sing - <span class="fw-semi-bold">Bootdey</span> Gallery of free snippets</h3>
+                                
+                            </div>
+                            <p class="text-light fs-mini mt-sm">Lots of cool stuff is happening around you. Just calm down for a sec and listen. Colors, sounds,
+                                thoughts, ideas. </p>
+                        </div>
+                        <!-- เวลา,commend,like -->
+                        <footer class="bg-body-light">
+                            <ul class="post-links">
+                                <li><a href="#">1 hour</a></li>
+                                <li><a href="#"><span class="text-danger"><i class="fa fa-heart"></i> Like</span></a></li>
+                                <li><a href="#">Comment</a></li>
+                            </ul>
+                        </footer>
+                    </section>
+                </div>
+    {% else %}
+
+        <!-- Post : ขวาา -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <section class="widget">
+                        <div class="widget-controls">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                        <div class="widget-body">
+                            <div class="post-user mt-n-xs">
+                                <span class="thumb pull-left mr">
+                                    <img class="img-circle" src="https://bootdey.com/img/Content/user_3.jpg" alt="...">
+                                </span>
+                                <h5 class="mb-xs mt-xs">{{post.id}}{{post.username}}</h5>
+                                <p class="fs-mini text-muted"><time>25 mins</time> &nbsp; <i class="fa fa-map-marker"></i> &nbsp; near Amsterdam</p>
+                            </div>
+                            <div class="widget-middle-overflow windget-padding-md clearfix bg-info text-white">
+                                <h3 class="mt-lg mb-lg">Sing - <span class="fw-semi-bold">Next Bootdey</span> Social site for bootstrap lovers</h3>
+                                
+                            </div>
+                            <p class="text-light fs-mini mt-sm">Lots of cool stuff is happening around you. Just calm down for a sec and listen. Colors, sounds,
+                        thoughts, ideas. </p>
+                        </div>
+                        <footer class="bg-body-light">
+                            <ul class="post-links">
+                                <li><a href="#">1 hour</a></li>
+                                <li><a href="#"><span class="text-danger"><i class="fa fa-heart"></i> Like</span></a></li>
+                                <li><a href="#">Comment</a></li>
+                            </ul>
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endfor %}
+</body>
+  
+{% endblock %}
+
