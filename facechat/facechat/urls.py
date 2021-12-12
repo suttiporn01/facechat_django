@@ -30,10 +30,10 @@ urlpatterns = [
     
     
     path('loginform/',views.loginform,name='loginform'),
-    
-    path('logout/',views.loginform,name='logout'),
 
-    path('loginform/login/',views.login,name='login'),
+    #path('logout/',views.loginform,name='logout'),
+
+    path('login',views.login,name='login'),
     
     
     path('register/',views.register,name='register'),

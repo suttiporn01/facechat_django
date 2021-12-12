@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages
-
+from urllib import request
 from .models import Post
 from .models import Post_f_a
 from django.contrib.auth.models import User,auth
@@ -44,6 +44,7 @@ def regi_input(request):
         messages.info(request,'password มันผิดโว้ยยย!!!!')
         return redirect('/register')
         
+#หน้า login เข้าสู่ระบบ        
 def login(request):
         
     username=request.POST['username']
@@ -54,7 +55,9 @@ def login(request):
     if user is not None :
         auth.login(request,user)
         print(username)
-        return render(request,'index.html')
+        #return render(request,'home.html')
+        program = User.objects.all()
+        return render(request, 'home.html', {'program': program})
         
     else :
         print(username)
@@ -65,6 +68,7 @@ def login(request):
 def home(request):
     program = User.objects.all()
     return render(request, 'home.html', {'program': program})
+    
 def profile(request):
     return render(request,'profile.html')
 def test(request):

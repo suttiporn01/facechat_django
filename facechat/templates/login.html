@@ -109,7 +109,7 @@ body{
                         {% endfor %}
                     </div>
                         {% endif %}
-                        <form action="login/" method="post">
+                        <form action="{% url 'login' %}" method="post">
                             {% csrf_token %}
                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
